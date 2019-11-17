@@ -1,6 +1,6 @@
 package com.luiscamara.formfillerweb.services;
 
-import com.luiscamara.PDFFormFiller.PDFFormFiller;
+import com.luiscamara.pdfformfiller.PDFFormFiller;
 import com.luiscamara.formfillerweb.models.Document;
 import com.luiscamara.formfillerweb.models.DocumentSummaryResponse;
 import com.luiscamara.formfillerweb.models.Field;
@@ -28,7 +28,7 @@ public class DocumentService {
 
         // Document processing
         PDFFormFiller formFiller = new PDFFormFiller(document.getContent().getData());
-        for(com.luiscamara.PDFFormFiller.models.Field formField : formFiller.getFields()) {
+        for(com.luiscamara.pdfformfiller.models.Field formField : formFiller.getFields()) {
             Field newField = new Field(formField);
             document.getFields().add(newField);
         }

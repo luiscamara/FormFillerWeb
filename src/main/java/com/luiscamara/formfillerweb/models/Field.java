@@ -1,6 +1,6 @@
 package com.luiscamara.formfillerweb.models;
 
-import com.luiscamara.PDFFormFiller.models.FieldType;
+import com.luiscamara.pdfformfiller.models.FieldType;
 
 public class Field {
     private String fullyQualifiedName;
@@ -12,7 +12,7 @@ public class Field {
 
     public Field() {}
 
-    public Field(com.luiscamara.PDFFormFiller.models.Field field) {
+    public Field(com.luiscamara.pdfformfiller.models.Field field) {
         this.fullyQualifiedName = field.getFullyQualifiedName();
         this.name = field.getName();
         this.type = field.getType();
@@ -24,8 +24,8 @@ public class Field {
                 break;
             case RADIOBUTTON:
                 String response = "(Available choices: ";
-                for(String key : ((com.luiscamara.PDFFormFiller.models.RadioButtonField)field).getMapValueToString().keySet()) {
-                    response += "Choice: " + key + " Value: " + ((com.luiscamara.PDFFormFiller.models.RadioButtonField)field).getMapValueToString().get(key) + ", ";
+                for(String key : ((com.luiscamara.pdfformfiller.models.RadioButtonField)field).getMapValueToString().keySet()) {
+                    response += "Choice: " + key + " Value: " + ((com.luiscamara.pdfformfiller.models.RadioButtonField)field).getMapValueToString().get(key) + ", ";
                 }
                 this.possibleInputs = response.substring(0, response.length()-2) + ")";
                 break;

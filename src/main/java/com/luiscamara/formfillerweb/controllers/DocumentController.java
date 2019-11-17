@@ -1,6 +1,6 @@
 package com.luiscamara.formfillerweb.controllers;
 
-import com.luiscamara.PDFFormFiller.PDFFormFiller;
+import com.luiscamara.pdfformfiller.PDFFormFiller;
 import com.luiscamara.formfillerweb.models.Document;
 import com.luiscamara.formfillerweb.models.DocumentSummaryResponse;
 import com.luiscamara.formfillerweb.services.DocumentService;
