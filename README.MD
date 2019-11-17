@@ -11,7 +11,7 @@ Java, Spring Boot, MongoDB and PDFBox.
 </p>
 <h3>Instructions</h3>
 <p>1) Publish this service on a Java Application Server, such as Tomcat.</p>
-<p>2) Access the web service.</p>
+<p>2) Use the web service.</p>
 <ul>
     <li>Upload the PDF Form using "http://yourserver.host.com/add". Include a Multipart form file with the name "pdf".</li>
     <li>Get the document ID from the "add" operation.</li>
