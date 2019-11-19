@@ -24,8 +24,8 @@ public class Field {
                 break;
             case RADIOBUTTON:
                 String response = "(Available choices: ";
-                for(String key : ((com.luiscamara.pdfformfiller.models.RadioButtonField)field).getMapValueToString().keySet()) {
-                    response += "Choice: " + key + " Value: " + ((com.luiscamara.pdfformfiller.models.RadioButtonField)field).getMapValueToString().get(key) + ", ";
+                for(String option : ((com.luiscamara.pdfformfiller.models.RadioButtonField)field).getOptions()) {
+                    response += option + ", ";
                 }
                 this.possibleInputs = response.substring(0, response.length()-2) + ")";
                 break;

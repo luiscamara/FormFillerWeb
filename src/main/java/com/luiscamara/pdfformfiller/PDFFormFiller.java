@@ -108,18 +108,7 @@ public class PDFFormFiller {
 
             if(field instanceof PDRadioButton) {
                 // If its a radio button, register choices available
-                Map<String, String> mapValueToInt = new HashMap<String, String>();
-                mapValueToInt.put(null, "Off");
-                int current = 1;
-                for(PDAnnotationWidget child : ((PDRadioButton)field).getWidgets()) {
-                    String fullQualifiedName = child.getAnnotationName();
-                    String[] names = fullQualifiedName.split("\\.");
-                    String name = names[names.length - 1];
-                    mapValueToInt.put(name, "" + current);
-                    current++;
-                }
-
-                RadioButtonField newField = new RadioButtonField(field, currentPage, mapValueToInt);
+                RadioButtonField newField = new RadioButtonField(field, currentPage, ((PDRadioButton) field).getExportValues());
                 fields.add(newField);
             }
 
@@ -235,8 +224,7 @@ public class PDFFormFiller {
 
         PDAcroForm form = pdfDocument.getDocumentCatalog().getAcroForm();
         PDField formField = form.getField(field.getFullyQualifiedName());
-        String translatedValue = field.getMapValueToString().get(value);
-        ((PDRadioButton)formField).setValue("" + translatedValue);
+        ((PDRadioButton)formField).setValue(value);
     }
 
     /**

@@ -2,27 +2,29 @@ package com.luiscamara.pdfformfiller.models;
 
 import org.apache.pdfbox.pdmodel.interactive.form.PDField;
 
+import java.util.List;
 import java.util.Map;
 
 public class RadioButtonField extends Field {
-    private Map<String, String> mapValueToString;
-    public RadioButtonField(PDField field, int page, Map<String, String> mapValueToString) {
+    private List<String> options;
+    public RadioButtonField(PDField field, int page, List<String> options) {
         super(field, page);
-        this.mapValueToString = mapValueToString;
+        this.options = options;
+        this.options.add("Off");
     }
 
-    public Map<String, String> getMapValueToString() {
-        return mapValueToString;
+    public List<String> getOptions() {
+        return options;
     }
 
     public String toString() {
-        String options = super.toString() + "\n";
-        options += "Options: ";
-        for(String key : mapValueToString.keySet()) {
-            options += key + ",";
+        String result = super.toString() + "\n";
+        result += "Options: ";
+        for(String option : this.options) {
+            result += option + ",";
         }
 
-        return options.substring(0, options.length() - 1);
+        return result.substring(0, result.length() - 1);
     }
 }
 
