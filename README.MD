@@ -25,7 +25,7 @@ External libraries: PDFBox<br />
 <p>The ID of the newly uploaded document</p>
 <h5>Description:</h5>
 <p>Use this method to insert a new PDF Form that you wish to fill using the service. Example of request and response:</p>
-![Image of Add Request](http://github.com/luiscamara/FormFillerWeb/tutorials_assets/add-request.png)
+<img src="http://github.com/luiscamara/FormFillerWeb/tutorials_assets/add-request.png" alt="Add Request" />
 <hr />
 <h4>Method: List documents</h4>
 <h5>Endpoint: /list</h5>
@@ -36,7 +36,7 @@ External libraries: PDFBox<br />
 <h5>Description:</h5>
 <p>Use this method to list all PDF Forms that were uploaded to the service. 
 Use the document ID to execute other methods, like filling a form. Example of request and response:</p>
-![Image of List Request](http://github.com/luiscamara/FormFillerWeb/tutorials_assets/list-request.png)
+<img src="http://github.com/luiscamara/FormFillerWeb/tutorials_assets/list-request.png" alt="List Request" />
 <hr />
 <h4>Method: Remove document</h4>
 <h5>Endpoint: /<&lt;DOCUMENT_ID&gt;>/remove</h5>
@@ -47,7 +47,7 @@ Use the document ID to execute other methods, like filling a form. Example of re
 <h5>Description:</h5>
 <p>Use this method to remove one PDF Form that were uploaded to the service. 
 Example of request and response:</p>
-![Image of Remove Request](http://github.com/luiscamara/FormFillerWeb/tutorials_assets/remove-request.png)
+<img src="http://github.com/luiscamara/FormFillerWeb/tutorials_assets/remove-request.png" alt="Remove Request" />
 <hr />
 <h4>Method: List document input fields</h4>
 <h5>Endpoint: /<&lt;DOCUMENT_ID&gt;>/listfields</h5>
@@ -67,7 +67,7 @@ Example of request and response:</p>
 <p>Use this method to collect vital information about the input fields available in the PDF Form. 
 The fullyQualifiedName and possibleInputs will be important to fill in the fields in the Fill Method.
 Example of request and response:</p>
-![Image of List Fields Request](http://github.com/luiscamara/FormFillerWeb/tutorials_assets/listfields-request.png)
+<img src="http://github.com/luiscamara/FormFillerWeb/tutorials_assets/listfields-request.png" alt="List Fields Request" />
 <hr />
 <h4>Method: Fill PDF form</h4>
 <h5>Endpoint: /<&lt;DOCUMENT_ID&gt;>/fill</h5>
@@ -83,7 +83,7 @@ Include document ID on the endpoint URL.
 <h5>Description:</h5>
 <p>Use this method to fill in input fields in a PDF Form.
 Example of request and response:</p>
-![Image of Fill Request](http://github.com/luiscamara/FormFillerWeb/tutorials_assets/fill-request.png)
+<img src="http://github.com/luiscamara/FormFillerWeb/tutorials_assets/fill-request.png" alt="Fill Request" />
 <hr />
 <h3>Sample workflow</h3>
 <p>1) Upload your PDF Form to the service.</p>
@@ -95,6 +95,6 @@ Example of request and response:</p>
 <h5>URL:</h5>
 <p>https://pdfformfiller.herokuapp.com/</p>
 <h5>Sample files:</h5>
-<p><a href="http://github.com/luiscamara/FormFillerWeb/tutorials_assets/original.pdf">Sample PDF file - Original</a></p>
-<p><a href="http://github.com/luiscamara/FormFillerWeb/tutorials_assets/filled.pdf">Sample PDF file - Filled</a></p>
-<p><a href="http://github.com/luiscamara/FormFillerWeb/tutorials_assets/sample.json">JSON used to fill Sample PDF file</a></p>
+<p><a href="http://github.com/luiscamara/FormFillerWeb/blob/master/tutorials_assets/original.pdf">Sample PDF file - Original</a></p>
+<p><a href="http://github.com/luiscamara/FormFillerWeb/blob/master/tutorials_assets/filled.pdf">Sample PDF file - Filled</a></p>
+<p><a href="http://github.com/luiscamara/FormFillerWeb/blob/master/tutorials_assets/sample.json">JSON used to fill Sample PDF file</a></p>
