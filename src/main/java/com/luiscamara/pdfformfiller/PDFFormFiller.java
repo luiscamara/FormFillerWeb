@@ -3,19 +3,14 @@ package com.luiscamara.pdfformfiller;
 import com.luiscamara.pdfformfiller.models.Field;
 import com.luiscamara.pdfformfiller.models.FieldType;
 import com.luiscamara.pdfformfiller.models.RadioButtonField;
-import com.sun.javaws.exceptions.InvalidArgumentException;
-import javafx.scene.control.RadioButton;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationWidget;
 import org.apache.pdfbox.pdmodel.interactive.form.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -180,7 +175,7 @@ public class PDFFormFiller {
      * @param value Value to be written
      * @throws IOException
      */
-    public void setField(String fullyQualifiedName, String value) throws Exception {
+    public void setField(String fullyQualifiedName, String value) throws IOException {
         if(fullyQualifiedName == null)
             throw new IllegalArgumentException("fullyQualifiedName argument is null!");
         if(value == null)
@@ -189,7 +184,7 @@ public class PDFFormFiller {
         PDAcroForm form = pdfDocument.getDocumentCatalog().getAcroForm();
         PDField formField = form.getField(fullyQualifiedName);
         if(formField == null)
-            throw new Exception("Could not find field " + fullyQualifiedName + "! Make sure field exists on the form!");
+            throw new IOException("Could not find field " + fullyQualifiedName + "! Make sure field exists on the form!");
 
         formField.setValue(value);
     }

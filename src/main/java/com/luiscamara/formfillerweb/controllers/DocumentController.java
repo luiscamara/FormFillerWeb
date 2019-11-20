@@ -56,7 +56,7 @@ public class DocumentController {
     }
 
     @PostMapping(value = "/{docId}/fill", consumes = "application/json", produces = "application/pdf")
-    public ResponseEntity<?> fillDocument(@PathVariable String docId, @RequestBody Map<String, String> params) throws Exception {
+    public ResponseEntity<?> fillDocument(@PathVariable String docId, @RequestBody Map<String, String> params) throws IOException {
         Document doc = documentService.getDocument(docId);
         if(doc == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
