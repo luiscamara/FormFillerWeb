@@ -10,7 +10,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -105,7 +107,11 @@ public class PDFFormFiller {
 
             if(field instanceof PDRadioButton) {
                 // If its a radio button, register choices available
-                RadioButtonField newField = new RadioButtonField(field, currentPage, new ArrayList<String>(((PDRadioButton) field).getExportValues()));
+                Map<String, String> mapOptionToValue = new HashMap<>();
+                for(int i = 0; i < ((PDRadioButton) field).getExportValues().size(); i++) {
+                    mapOptionToValue.put(((PDRadioButton) field).getWidgets().get(i).getAnnotationName(), ((PDRadioButton) field).getExportValues().get(i));
+                }
+                RadioButtonField newField = new RadioButtonField(field, currentPage, mapOptionToValue);
                 fields.add(newField);
             }
 

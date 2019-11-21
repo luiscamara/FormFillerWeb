@@ -6,25 +6,24 @@ import java.util.List;
 import java.util.Map;
 
 public class RadioButtonField extends Field {
-    private List<String> options;
-    public RadioButtonField(PDField field, int page, List<String> options) {
+    private Map<String, String> mapChoiceToValue;
+    public RadioButtonField(PDField field, int page, Map<String, String> options) {
         super(field, page);
-        this.options = options;
-        this.options.add("Off");
+        this.mapChoiceToValue = options;
     }
 
-    public List<String> getOptions() {
-        return options;
+    public Map<String, String> getMapChoiceToValue() {
+        return mapChoiceToValue;
     }
 
     public String toString() {
         String result = super.toString() + "\n";
-        result += "Options: ";
-        for(String option : this.options) {
-            result += option + ",";
+        result += "Options: (";
+        for(String option : this.mapChoiceToValue.keySet()) {
+            result += "Choice: " + option + ", Value: " + this.mapChoiceToValue.get(option) + "; ";
         }
 
-        return result.substring(0, result.length() - 1);
+        return result.substring(0, result.length() - 1) + ")";
     }
 }
 

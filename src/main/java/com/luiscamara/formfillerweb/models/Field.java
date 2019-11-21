@@ -23,11 +23,11 @@ public class Field {
                 this.possibleInputs = "(1 or Off)";
                 break;
             case RADIOBUTTON:
-                String response = "(Available choices: ";
-                for(String option : ((com.luiscamara.pdfformfiller.models.RadioButtonField)field).getOptions()) {
-                    response += option + ", ";
+                String response = "Available choices: (";
+                for(String option : ((com.luiscamara.pdfformfiller.models.RadioButtonField)field).getMapChoiceToValue().keySet()) {
+                    response += "Choice: " + option + ", Value: " + ((com.luiscamara.pdfformfiller.models.RadioButtonField)field).getMapChoiceToValue().get(option) + "; ";
                 }
-                this.possibleInputs = response.substring(0, response.length()-2) + ")";
+                this.possibleInputs = response.substring(0, response.length()-1) + ")";
                 break;
             case TEXT:
                 this.possibleInputs = "(Any text)";
